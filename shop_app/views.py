@@ -245,6 +245,12 @@ class HomeView(ListView):
     paginate_by = 4
     template_name = "home.html"
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = Item.objects.all()
+        category = self.request.GET.get("category")
+        if category:
+            queryset = Item.objects.all().filter(category=category)
+        return queryset
 
 class OrderSummaryView(LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
@@ -345,7 +351,7 @@ def get_coupon(request, code):
 
     except ObjectDoesNotExist:
         messages.info(request, "This coupon does not exist")
-        return redirect("shop_app:checkout")
+        return redirect("/")
 
 class AddCouponView(View):
     def post(self, *args, **kwargs):

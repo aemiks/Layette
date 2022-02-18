@@ -25,20 +25,31 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">All
+              <a class="nav-link" href="{% url 'shop_app:home'%}">All
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shirts</a>
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=H" >Hospital</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sport wears</a>
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=CP">Care Products</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Outwears</a>
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=C">Cloths</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=F">Feeding</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=T">Transport</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=S">Sleep</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" name="category" href="{% url 'shop_app:home'%}?category=O">Others</a>
+            </li>
           </ul>
           <!-- Links -->
 
